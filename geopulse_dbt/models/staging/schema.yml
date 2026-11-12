@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_hourly_footfall
+    description: "Staging model for hourly store footfall data"
+
+    columns:
+      - name: STORE_ID
+        description: "Unique identifier of the store"
+        data_tests:
+          - not_null
+
+      - name: STORE_NAME
+        description: "Name of the store"
+        data_tests:
+          - not_null
+
+      - name: FOOTFALL_DATE
+        description: "Date of the footfall observation"
+        data_tests:
+          - not_null
+
+      - name: HOUR_OF_DAY
+        description: "Hour of the day when footfall was recorded"
+        data_tests:
+          - not_null
+
+      - name: UNIQUE_VISITORS
+        description: "Number of unique visitors"
+        data_tests:
+          - not_null
+
+      - name: TOTAL_PINGS
+        description: "Total GPS pings recorded"
+        data_tests:
+          - not_null
