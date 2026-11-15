@@ -12,6 +12,7 @@
   "dependencies": {
     "@kepler.gl/components": "^3.3.0-alpha.21",
     "@kepler.gl/reducers": "^3.3.0-alpha.21",
+    "h3": "^2.0.8",
     "kepler.gl": "^3.3.0-alpha.21",
     "lucide-react": "^1.73.0",
     "maplibre-gl": "^4.7.1",
