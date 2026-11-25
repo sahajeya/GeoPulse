@@ -3,7 +3,7 @@ from sedona.spark import SedonaContext
 from pyspark.sql.functions import col, expr, count, countDistinct
 
 
-GPS_FILE = "data/raw/mobile_gps_pings.csv"
+GPS_FILE = "data/processed/spatial_audit_1m.csv"
 STORES_FILE = "data/reference/stores.csv"
 
 
