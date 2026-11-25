@@ -1,0 +1,9 @@
+metric,value
+gps_records_processed,1000000
+stores_loaded,5
+matched_gps_points,15010
+unique_devices,7720
+stores_with_traffic,5
+spatial_engine,Apache Sedona
+execution_status,SUCCESS
+oom_occurred,NO
