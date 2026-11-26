@@ -4,7 +4,7 @@ from pathlib import Path
 INPUT_FILE = Path("data/raw/mobile_gps_pings.csv")
 OUTPUT_FILE = Path("data/processed/spatial_audit_1m.csv")
 
-TARGET_ROWS = 1_000_000
+TARGET_ROWS = 2_000_000
 
 print("Reading base GPS data...")
 df = pd.read_csv(INPUT_FILE)

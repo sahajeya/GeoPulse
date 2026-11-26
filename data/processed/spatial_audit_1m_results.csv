@@ -1,10 +1,10 @@
 metric,value
-gps_records_processed,1000000
+gps_records_processed,2000000
 stores_loaded,5
-matched_gps_points,15010
-unique_devices,7720
+matched_gps_points,30020
+unique_devices,15440
 stores_with_traffic,5
 spatial_engine,Apache Sedona
-execution_time_seconds,27.24
+execution_time_seconds,19.95
 execution_status,SUCCESS
 oom_occurred,NO
