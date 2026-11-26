@@ -1,3 +1,4 @@
+import time
 from pyspark.sql import SparkSession
 from sedona.spark import SedonaContext
 from pyspark.sql.functions import col, expr, count, countDistinct
@@ -8,6 +9,7 @@ STORES_FILE = "data/reference/stores.csv"
 
 
 def main():
+    start_time = time.perf_counter()
     config = (
         SedonaContext.builder()
         .config(
@@ -86,6 +88,8 @@ def main():
     print(f"Stores with traffic: {stores_with_traffic}")
     print("-" * 60)
 
+    elapsed_time = time.perf_counter() - start_time
+    print(f"Execution time    : {elapsed_time:.2f} seconds")
     print("Spatial audit completed successfully.")
     print("=" * 60)
 
