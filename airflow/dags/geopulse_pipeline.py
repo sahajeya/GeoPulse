@@ -12,10 +12,20 @@ with DAG(
     tags=["GeoPulse", "geospatial", "analytics"],
 ) as dag:
 
+    run_pyspark_spatial_audit = BashOperator(
+        task_id="run_pyspark_spatial_audit",
+        bash_command=(
+            "cd /mnt/c/Users/Sahana/OneDrive/Desktop/GeoPulse && "
+            "source ~/geopulse-spark-venv/bin/activate && "
+            "python scripts/pyspark_spatial_audit.py"
+        ),
+    )
+
     generate_h3_footfall = BashOperator(
         task_id="generate_h3_footfall",
         bash_command=(
             "cd /mnt/c/Users/Sahana/OneDrive/Desktop/GeoPulse && "
+            "source ~/geopulse-spark-venv/bin/activate && "
             "python scripts/generate_h3_footfall.py"
         ),
     )
@@ -24,8 +34,9 @@ with DAG(
         task_id="run_dbt",
         bash_command=(
             "cd /mnt/c/Users/Sahana/OneDrive/Desktop/GeoPulse/geopulse_dbt && "
+            "source ~/geopulse-spark-venv/bin/activate && "
             "dbt run"
         ),
     )
 
-    generate_h3_footfall >> run_dbt
+    run_pyspark_spatial_audit >> generate_h3_footfall >> run_dbt
